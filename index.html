@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">	
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap-responsive.css">
+</head>
+<body>
+<div class="Container">
+	<div class="row" style="margin:10%;">
+		<div class="span4 offset3">
+		
+		<form name = "orderent" action="processorder.php" method="post">
+			<p>Tyre Qty.</p>
+			<p><input type="text" name="tyreqty" class="span2" placeholder="Tyre Qty"><p>
+			<p>Oil Qty.</p>
+			<p><input type="text" name="oilqty" class="span2" placeholder="Oil Qty."><p>	
+			<p>Spark Qty.</p>
+			<p><input type="text" name="sparkqty" class="span2" placeholder="Spark Qty."><p>	
+			<p>Address</p>
+			<p><textarea class="span4" rows="3" name=address></textarea></p>	
+			<button type="submit" class="btn btn-success" name=submit>Submit</button>
+			<a href="vieworder.php" name="view" >View</a>
+		</form>
+
+
+		</div>	
+		<div class="span5">
+
+		</div>		
+</div>
+
+</body>
+</html>
