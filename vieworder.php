@@ -12,7 +12,7 @@
 	<h1>Noman's Auto Parts.</h1>
 	<h2>Customer Order</h2>
 	<?php
-		 $fp =fopen("$DOCUMENT_ROOT/processorder/rootdoc.txt",'r');
+		 $fp =fopen("$DOCUMENT_ROOT/processorder2/rootdoc.txt",'r');
 
 		if (!$fp)
 		{
@@ -20,11 +20,14 @@
 			exit;
 		}
 
-		while(!feof($fp))
-		{
-			$order=fgets($fp,999);
-			echo $order."</br>";
-		}
+		// while(!feof($fp)) Here feof() and fgets used
+		// {
+		// 	$order=fgets($fp,999);
+		// 	echo $order."</br>";
+		// }
+
+		readfile($fp); // above part is done in 1 line
+
 		fclose($fp);
 	?>
 </body>
