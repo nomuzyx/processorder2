@@ -60,7 +60,7 @@ $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
 
 	$outstring = $date."\t".$tyreqty." Tyres \t". $oilqty." oil\t".$sparkqty." Spark Plugs \t\$.".$totalamt."\t".$address."\n";
 
-	@ $fp = fopen("$DOCUMENT_ROOT/processorder/rootdoc.txt",'ab');
+	@ $fp = fopen("$DOCUMENT_ROOT/processorder2/rootdoc.txt",'ab');
 
 	if (!$fp)
 	{
@@ -68,7 +68,9 @@ $DOCUMENT_ROOT = $_SERVER['DOCUMENT_ROOT'];
 		exit;
 
 	}
+	flock($fp, LOCK_EX);
 	fwrite($fp,$outstring,strlen($outstring));
+	flock($fp, LOCK_UN);
 	fclose($fp);
 	echo"<p>Order Written.</p>";
 
